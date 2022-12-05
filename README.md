@@ -29,16 +29,16 @@ Plus: Realizar un deployment de la API en una plataforma "code to cloud" como po
 
 ## Explicación de los contenidos del Repositorio:
 
-+ En la carpeta `app` se encuentran los datasets analizados además del `main.py`
++ En la carpeta `app` se encuentran los datasets analizados además del `main.py` que es el archivo en el cual se configura FastAPI y se instancian los decoradores de la API.
+
++ En el notebook `ETL.ipynb` se encuentra el código comentado paso por paso, explicando las decisiones tomadas a la hora de encarar este proyecto de ETL;
+    Esto se hizo así para tener dividido de manera ordenada los bloques de código, separados por los markdowns que van separando las etapas del proceso.
+    Con esto espero documentar y demostrar cada paso del desarrollo
 
 + En el archivo `consultas.py` se encuentra el mismo código del notebook `ETL.ipynb` pero más optimizado y sin comentarios.
     De esta forma puedo tener mi código de una manera más resumida y de fácil acceso para importar en mi `main.py` las funciones declaradas.
 
 + En el archivo `Dockerfile` se encuentra el entorno containerizado de Docker con FastAPI.
-
-+ En el notebook `ETL.ipynb` se encuentra el código comentado paso por paso, explicando las decisiones tomadas a la hora de encarar este proyecto de ETL;
-    Esto se hizo así para tener dividido de manera ordenada los bloques de código, separados por los markdowns que van separando las etapas del proceso.
-    Con esto espero documentar y demostrar cada paso del desarrollo
 
 ## Herramientas utilizadas:
 
