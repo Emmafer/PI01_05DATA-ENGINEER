@@ -20,7 +20,6 @@ Las consultas a realizar son:
   
 + Cantidad de veces que se repite un género y plataforma con mayor frecuencia del mismo.
     El request debe ser: get_listedin('genero')  
-    Como ejemplo de género pueden usar 'comedy', el cuál deberia devolverles un cunt de 2099 para la plataforma de amazon.
 
 + Actor que más se repite según plataforma y año.
     El request debe ser: get_actor(plataforma, año)
