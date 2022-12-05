@@ -12,10 +12,10 @@ Realizar un trabajo de ETL sobre los datasets recibidos, luego, levantar una API
 
 Las consultas a realizar son:
 
-+ Máxima duración según tipo de film (película/serie), por plataforma y por año:
++ Máxima duración según tipo de film (película/serie), por plataforma y por año.
     El request debe ser: get_max_duration(año, plataforma, [min o season])
 
-+ Cantidad de películas y series (separado) por plataforma
++ Cantidad de películas y series (separado) por plataforma.
     El request debe ser: get_count_plataform(plataforma)  
   
 + Cantidad de veces que se repite un género y plataforma con mayor frecuencia del mismo.
