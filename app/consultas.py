@@ -36,6 +36,9 @@ def sep_duration(df):
 
 df_final = sep_duration(df_final)
 
+df_final.cast = df_final.cast.replace(" ,",",")
+df_final.cast = df_final.cast.replace(", ",",")
+
 df_final.duration_int = df_final.duration_int.replace('Sin',0)
 df_final.duration_type = df_final.duration_type.replace('Dato','Sin Dato')
 
