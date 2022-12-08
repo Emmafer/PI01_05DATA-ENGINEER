@@ -1,11 +1,9 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
 from consultas import df_final
 from consultas import itemgetter
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index():
