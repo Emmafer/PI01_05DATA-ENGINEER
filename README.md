@@ -4,7 +4,7 @@
 
 ## Introducción:
 
-¡Hola! Mi nombre es Emmanuel Fernandez, al momento de hacer este proyecto me encuentro cursando la etapa de Labs para la carrera de Data Science de SoyHenry. Este proyecto busca situarnos en el rol de un Data Engineer, y para ello se nos entregan 4 datasets de distintas plataformas de streaming como amazon, disney, hulu y netflix. Los mismos pueden estar en formato csv o json y debemos realizar un EDA sobre cada uno y corregir imperfecciones como diferencias en el tipo de los datos, valores nulos, duplicados, etc.
+¡Hola! 👋 Mi nombre es Emmanuel Fernandez, al momento de hacer este proyecto me encuentro cursando la etapa de Labs para la carrera de Data Science de SoyHenry. Este proyecto busca situarnos en el rol de un Data Engineer, y para ello se nos entregan 4 datasets de distintas plataformas de streaming como amazon, disney, hulu y netflix. Los mismos pueden estar en formato csv o json y debemos realizar un EDA sobre cada uno y corregir imperfecciones como diferencias en el tipo de los datos, valores nulos, duplicados, etc.
 
 ## Objetivo: 
 
@@ -36,7 +36,7 @@ Plus: Realizar un deployment de la API en una plataforma "code to cloud" como po
 
 + En el archivo `Dockerfile` se encuentra el entorno containerizado de Docker con FastAPI.
 
-+ En la carpeta `templates` se encuentra mi archivo .html 
++ En la carpeta `templates` se encuentra mi archivo .html sobre el cual trabajé el front de la API.
 
 ## Herramientas utilizadas:
 
