@@ -46,7 +46,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   </a>
   <h4 class="w3-bar-item"><b>Links:</b></h4>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://github.com/Emmafer/PI01_05DATA-ENGINEER" target="_blank">GitHub Repo</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="https://www.youtube.com/watch?v=fEQ04igLrNE">Video Explicativo</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://www.youtube.com/watch?v=fEQ04igLrNE" target="_blank">Video Explicativo</a>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
