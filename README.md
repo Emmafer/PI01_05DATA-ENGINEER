@@ -36,7 +36,7 @@ Plus: Realizar un deployment de la API en una plataforma "code to cloud" como po
 
 + En el archivo `Dockerfile` se encuentra el entorno containerizado de Docker con FastAPI.
 
-+ En la carpeta `templates` se encuentra mi archivo .html 
++ En la carpeta `templates` se encuentra mi archivo .html sobre el cual trabajé el front de la API.
 
 ## Herramientas utilizadas:
 
