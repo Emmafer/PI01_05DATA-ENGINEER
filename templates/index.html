@@ -1,15 +1,5 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-from consultas import df_final
-from consultas import itemgetter
-
-app = FastAPI()
-templates = Jinja2Templates(directory="templates")
-
-@app.get("/", response_class=HTMLResponse)
-async def index():
-    return '''<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>PI-01 DTS-05</title>
 <meta charset="UTF-8">
@@ -120,58 +110,3 @@ function w3_close() {
 
 </body>
 </html>
-'''
-
-@app.get("/get_max_duration/{anio}/{plataforma}/{tipo}")
-async def get_max_duration(anio,plataforma,tipo):
-    anio = int(anio)
-    tuple_plataformas = ("amazon","disney","hulu","netflix")
-    tuple_tipo = ("min","season")
-    try:
-        if (anio in range(df_final.release_year.min(),df_final.release_year.max()+1)) and (plataforma in (tuple_plataformas)) and (tipo in tuple_tipo):
-            id_final = df_final.query(f"release_year == {anio} and platform == '{plataforma}' and duration_type == '{tipo}'").duration_int.idxmax()
-            return f'{df_final[id_final:id_final+1].to_dict().get("title").get(id_final)} Tiene la mayor duración: {df_final[id_final:id_final+1].to_dict().get("duration").get(id_final)}'
-        else:
-            return f"Faltan datos para su consulta o alguno de los parámetros es incorrecto, por favor verifique que los datos ingresados."
-    except ValueError:
-            return f"La plataforma {plataforma} no posee registros en {anio}"
-
-@app.get("/get_count_platform/{plataforma}")
-async def get_count_platform(plataforma):
-    tuple_plataformas = ("amazon","disney","hulu","netflix")
-    if plataforma in (tuple_plataformas):
-        dict = df_final.query(f"platform == '{plataforma}'").groupby(by=['type']).title.count().to_dict()
-        return f'El conteo de la plataforma {plataforma} es: {dict.get("Movie")} películas y {dict.get("TV Show")} series'
-    else:
-        return f"Faltan datos para su consulta o alguno de los parámetros es incorrecto, por favor verifique que los datos ingresados."
-
-@app.get("/get_listedin/{genero}")
-async def get_listedin(genero):
-    try:
-        dict_plat = df_final[df_final.listed_in.str.contains(genero, case=False)].groupby(by=['platform']).title.count().to_dict()
-        max_value = max(dict_plat.items(), key=itemgetter(1))[0]
-        return f'la plataforma {max_value} tiene la mayor frecuencia de género {genero}, apareciendo {dict_plat.get(max_value)} veces'
-    except ValueError:
-        return f'No hay registros de {genero} en ninguna de nuestras plataformas.'
-
-@app.get("/get_actor/{plataforma}/{anio}")
-async def get_actor(plataforma, anio):
-    anio = int(anio)
-    tuple_plataformas = ("amazon","disney","hulu","netflix")
-    try:
-        if (anio in range(df_final.release_year.min(),df_final.release_year.max()+1)) and (plataforma in (tuple_plataformas)):
-            actor_list = []
-            cast_list = df_final.query(f"platform == '{plataforma}' and release_year == {anio}").cast.tolist()
-            for i in range(len(cast_list)):
-                actor_list_temp = cast_list[i].split(",")
-                for j in range(len(actor_list_temp)):
-                    if actor_list_temp[j] != 'Sin Datos':
-                        actor_list.append(actor_list_temp[j])
-            dict_actor = dict(zip(actor_list,map(lambda x: actor_list.count(x),actor_list)))
-            max_actor = max(dict_actor, key=dict_actor.get)
-            max_actor_appearances = dict_actor.get(max_actor)
-            return f'El actor/actriz con mayor número de apariciones en la plataforma {plataforma} el año {anio} es {max_actor} con {max_actor_appearances} apariciones.'
-        else:
-            return f"Faltan datos para su consulta o alguno de los parámetros es incorrecto, por favor verifique que los datos ingresados."
-    except ValueError:
-        return f"La plataforma indicada no posee registros en {anio}"

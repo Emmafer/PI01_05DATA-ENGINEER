@@ -1,4 +1,5 @@
 import pandas as pd
+from operator import itemgetter
 
 df_amazon = pd.read_csv("/app/datasets/amazon_prime_titles.csv",delimiter = ',',encoding = "utf-8")
 df_disney = pd.read_csv("/app/datasets/disney_plus_titles.csv",delimiter = ',',encoding = "utf-8")
