@@ -49,3 +49,9 @@ Plus: Realizar un deployment de la API en una plataforma "code to cloud" como po
 + FastAPI.
 
 + HTML.
+
+## Links:
+
++ Video Explicativo de la API: https://www.youtube.com/watch?v=fEQ04igLrNE
+
++ Deploy de la API en Mogenius: https://pi01-05data-en-prod-apistream-w9bhb9.mo1.mogenius.io
